@@ -24,6 +24,7 @@
 
   this.checkResponse = function(domId, response) {
     document.querySelector(domId).href=response;
+    document.querySelector('#js-textarea').textContent = response;
   }
 
   main();
