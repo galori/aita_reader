@@ -7,7 +7,7 @@ ol.letters { counter-reset: item }
 ol.letters li { display: block }
 ol.letters li:before { content: counter(item, lower-alpha) ") "; counter-increment: item }
 
-a.bookmarklet {
+a.bookmarklet, #copy-button {
   background-color: #4CAF50;
   border: none;
   color: white;
