@@ -32,21 +32,34 @@
   }
 
   this.setupCopyButton = function() {
+
     // Select the textarea and the button
     const textarea = document.getElementById('js-textarea');
     const copyButton = document.getElementById('copy-button');
 
+    const that = this;
     // Add a click event listener to the textarea to select its content
     textarea.addEventListener('click', function() {
-      this.select();
+      textarea.select(textarea.value);
+      that.copy();
     });
 
     // Add a click event listener to the button to copy the textarea content
     copyButton.addEventListener('click', function() {
       textarea.select();
-      document.execCommand('copy');
+      that.copy(textarea.value);
     });
   }
+
+  this.copy = function(value) {
+    document.execCommand('copy');
+    navigator.clipboard.writeText(value).then(function() {
+      console.log('Copying to clipboard was successful!');
+    }, function(err) {
+      console.error('Could not copy text: ', err);
+    });
+  }
+
 
   main();
 
