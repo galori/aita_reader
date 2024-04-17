@@ -1,3 +1,7 @@
+## Usage
+
+Visit http://gal.steinitz.com/aita_reader/ to install
+
 ## Development
 
 * To make changes, the source javascript is in `lib`.
